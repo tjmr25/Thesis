@@ -1,0 +1,166 @@
+<h2>Ihr Tarif</h2>
+
+<!-- Insurance plan options -->
+<div class="plan-selector">
+  <div class="plan-option">
+    <h3>Basis</h3>
+    <div class="price">ab 19,90 € / Monat</div>
+    <div class="feature-list">
+      <div class="feature">
+        <span class="check">✓</span> Grundlegende Tierarztkosten
+      </div>
+      <div class="feature">
+        <span class="check">✓</span> Haftpflichtversicherung bis 3 Mio. €
+      </div>
+      <div class="feature">
+        <span class="check">✓</span> Notfall-Transport
+      </div>
+      <div class="feature">
+        <span class="check">✓</span> Grundlegende OP-Kosten
+      </div>
+      <div class="feature inactive">
+        <span class="x">×</span> Rehabilitation & Physiotherapie
+      </div>
+      <div class="feature inactive">
+        <span class="x">×</span> Diebstahlschutz
+      </div>
+    </div>
+  </div>
+  <div class="plan-option">
+    <h3>Plus</h3>
+    <div class="price">ab 29,90 € / Monat</div>
+    <div class="feature-list">
+      <div class="feature">
+        <span class="check">✓</span> Erweiterte Tierarztkosten
+      </div>
+      <div class="feature">
+        <span class="check">✓</span> Haftpflichtversicherung bis 5 Mio. €
+      </div>
+      <div class="feature">
+        <span class="check">✓</span> Notfall-Transport & Bergung
+      </div>
+      <div class="feature">
+        <span class="check">✓</span> Umfassende OP-Kosten
+      </div>
+      <div class="feature">
+        <span class="check">✓</span> Basis-Rehabilitation
+      </div>
+      <div class="feature inactive">
+        <span class="x">×</span> Diebstahlschutz
+      </div>
+    </div>
+  </div>
+  <div class="plan-option">
+    <h3>Pro</h3>
+    <div class="price">ab 39,90 € / Monat</div>
+    <div class="feature-list">
+      <div class="feature">
+        <span class="check">✓</span> Vollständige Tierarztkosten
+      </div>
+      <div class="feature">
+        <span class="check">✓</span> Haftpflichtversicherung bis 10 Mio. €
+      </div>
+      <div class="feature">
+        <span class="check">✓</span> Premium-Transport & Bergung
+      </div>
+      <div class="feature">
+        <span class="check">✓</span> Unbegrenzte OP-Kosten
+      </div>
+      <div class="feature">
+        <span class="check">✓</span> Vollständige Rehabilitation
+      </div>
+      <div class="feature">
+        <span class="check">✓</span> Diebstahlschutz bis 15.000 €
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Form fields -->
+<div class="form-section">
+  <h3>Informationen zu Ihrem Pferd</h3>
+  <p class="form-intro">Bitte geben Sie die Details Ihres Pferdes an, um ein personalisiertes Angebot zu erhalten.</p>
+  
+  <div class="form-container">
+    <div class="form-group">
+      <label for="breed">
+        Rasse
+      </label>
+      <div class="select-wrapper">
+        <select id="breed" class="form-control">
+          <option value="" disabled selected>Bitte wählen</option>
+          <option value="araber">Arabisches Vollblut</option>
+          <option value="deutsches-reitpferd">Deutsches Reitpferd</option>
+          <option value="deutsches-sportpferd">Deutsches Sportpferd</option>
+          <option value="haflinger">Haflinger</option>
+          <option value="hannoveraner">Hannoveraner</option>
+          <option value="holsteiner">Holsteiner</option>
+          <option value="islaender">Isländer</option>
+          <option value="oldenburger">Oldenburger</option>
+          <option value="trakehner">Trakehner</option>
+          <option value="westfale">Westfale</option>
+        </select>
+      </div>
+    </div>
+    
+    <div class="form-group">
+      <label for="birthdate">
+        Geburtsdatum
+      </label>
+      <div class="date-wrapper">
+        <input type="date" id="birthdate" class="form-control">
+      </div>
+    </div>
+  </div>
+  
+  <!-- Health Questions -->
+  <div class="health-questions">
+    <div class="question-group">
+      <p class="question">Bestehen bei Ihrem Pferd aktuell Krankheitssymptome oder chronische Krankheiten?</p>
+      <div class="radio-group">
+        <div class="radio-option">
+          <input type="radio" id="symptoms-yes" name="hasSymptoms" value="yes" [(ngModel)]="hasSymptoms">
+          <label for="symptoms-yes">Ja</label>
+        </div>
+        <div class="radio-option">
+          <input type="radio" id="symptoms-no" name="hasSymptoms" value="no" [(ngModel)]="hasSymptoms">
+          <label for="symptoms-no">Nein</label>
+        </div>
+      </div>
+    </div>
+    
+    <div class="question-group">
+      <p class="question">War Ihr Pferd in der Vergangenheit wegen Krankheiten oder Unfällen in tierärztlicher Behandlung?</p>
+      <div class="radio-group">
+        <div class="radio-option">
+          <input type="radio" id="treatment-yes" name="hadTreatment" value="yes" [(ngModel)]="hadTreatment">
+          <label for="treatment-yes">Ja</label>
+        </div>
+        <div class="radio-option">
+          <input type="radio" id="treatment-no" name="hadTreatment" value="no" [(ngModel)]="hadTreatment">
+          <label for="treatment-no">Nein</label>
+        </div>
+      </div>
+    </div>
+    
+    <div class="question-group">
+      <p class="question">Ist Ihr Pferd aus dem Ausland?</p>
+      <div class="radio-group">
+        <div class="radio-option">
+          <input type="radio" id="abroad-yes" name="isFromAbroad" value="yes" [(ngModel)]="isFromAbroad">
+          <label for="abroad-yes">Ja</label>
+        </div>
+        <div class="radio-option">
+          <input type="radio" id="abroad-no" name="isFromAbroad" value="no" [(ngModel)]="isFromAbroad">
+          <label for="abroad-no">Nein</label>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Navigation buttons -->
+<div class="button-container">
+  <button class="back-button" routerLink="/">Zurück</button>
+  <button class="next-button" routerLink="/calculator/second">Weiter</button>
+</div>

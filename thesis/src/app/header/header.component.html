@@ -1,11 +1,14 @@
 <header>
-  <div>
-    <div class="logo">LVM</div>
+  <div class="container">
+    <div class="logo">
+      <img src="lvm_logo_gruen.svg" alt="LVM Logo">
+    </div>
     <nav>
       <ul>
-        <li>Pferde</li>
-        <li>Hunde</li>
-        <li>Katzen</li>
+        <li (click)="router.navigate(['/'])">Pferde</li>
+        <li (click)="router.navigate(['/dogs'])">Hunde</li>
+        <li (click)="router.navigate(['/cats'])">Katzen</li>
+        <li><span class="material-icons">phone</span> 0251 702-0</li>
       </ul>
     </nav>
   </div>

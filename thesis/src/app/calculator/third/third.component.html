@@ -1,0 +1,139 @@
+<h2>Kontaktanfrage</h2>
+
+<div class="form-container">
+  <p class="form-intro">Bitte geben Sie Ihre Kontaktdaten an, damit wir Ihnen ein individuelles Angebot erstellen können.</p>
+  
+  <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" novalidate>
+    <div class="form-section">
+      <h3>Persönliche Daten</h3>
+      
+      <div class="form-row">
+        <div class="form-field">
+          <label for="salutation">Anrede*</label>
+          <select id="salutation" formControlName="salutation" aria-required="true">
+            <option value="" disabled selected>Bitte wählen</option>
+            <option value="Herr">Herr</option>
+            <option value="Frau">Frau</option>
+            <option value="Divers">Divers</option>
+          </select>
+          <div class="error-message" *ngIf="contactForm.get('salutation')?.invalid && contactForm.get('salutation')?.touched">
+            Bitte wählen Sie eine Anrede aus
+          </div>
+        </div>
+      </div>
+      
+      <div class="form-row">
+        <div class="form-field">
+          <label for="firstName">Vorname*</label>
+          <input type="text" id="firstName" formControlName="firstName" aria-required="true">
+          <div class="error-message" *ngIf="contactForm.get('firstName')?.invalid && contactForm.get('firstName')?.touched">
+            Bitte geben Sie Ihren Vornamen ein
+          </div>
+        </div>
+        
+        <div class="form-field">
+          <label for="lastName">Nachname*</label>
+          <input type="text" id="lastName" formControlName="lastName" aria-required="true">
+          <div class="error-message" *ngIf="contactForm.get('lastName')?.invalid && contactForm.get('lastName')?.touched">
+            Bitte geben Sie Ihren Nachnamen ein
+          </div>
+        </div>
+      </div>
+      
+      <div class="form-row">
+        <div class="form-field">
+          <label for="email">E-Mail*</label>
+          <input type="email" id="email" formControlName="email" aria-required="true">
+          <div class="error-message" *ngIf="contactForm.get('email')?.errors?.['required'] && contactForm.get('email')?.touched">
+            Bitte geben Sie Ihre E-Mail-Adresse ein
+          </div>
+          <div class="error-message" *ngIf="contactForm.get('email')?.errors?.['email'] && contactForm.get('email')?.touched">
+            Bitte geben Sie eine gültige E-Mail-Adresse ein
+          </div>
+        </div>
+        
+        <div class="form-field">
+          <label for="phone">Telefon*</label>
+          <input type="tel" id="phone" formControlName="phone" aria-required="true">
+          <div class="error-message" *ngIf="contactForm.get('phone')?.invalid && contactForm.get('phone')?.touched">
+            Bitte geben Sie Ihre Telefonnummer ein
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="form-section">
+      <h3>Adresse</h3>
+      
+      <div class="form-row">
+        <div class="form-field">
+          <label for="street">Straße*</label>
+          <input type="text" id="street" formControlName="street" aria-required="true">
+          <div class="error-message" *ngIf="contactForm.get('street')?.invalid && contactForm.get('street')?.touched">
+            Bitte geben Sie Ihre Straße ein
+          </div>
+        </div>
+        
+        <div class="form-field form-field-small">
+          <label for="houseNumber">Nr.*</label>
+          <input type="text" id="houseNumber" formControlName="houseNumber" aria-required="true">
+          <div class="error-message" *ngIf="contactForm.get('houseNumber')?.invalid && contactForm.get('houseNumber')?.touched">
+            Bitte geben Sie Ihre Hausnummer ein
+          </div>
+        </div>
+      </div>
+      
+      <div class="form-row">
+        <div class="form-field form-field-small">
+          <label for="postalCode">PLZ*</label>
+          <input type="text" id="postalCode" formControlName="postalCode" maxlength="5" aria-required="true">
+          <div class="error-message" *ngIf="contactForm.get('postalCode')?.invalid && contactForm.get('postalCode')?.touched">
+            Bitte geben Sie eine gültige Postleitzahl ein (5 Ziffern)
+          </div>
+        </div>
+        
+        <div class="form-field">
+          <label for="city">Ort*</label>
+          <input type="text" id="city" formControlName="city" aria-required="true">
+          <div class="error-message" *ngIf="contactForm.get('city')?.invalid && contactForm.get('city')?.touched">
+            Bitte geben Sie Ihren Ort ein
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="form-section">
+      <h3>Zusätzliche Informationen</h3>
+      
+      <div class="form-row">
+        <div class="form-field full-width">
+          <label for="message">Ihre Nachricht (optional)</label>
+          <textarea id="message" formControlName="message" rows="4"></textarea>
+        </div>
+      </div>
+    </div>
+    
+    <div class="form-section">
+      <div class="form-row">
+        <div class="form-field full-width checkbox-field">
+          <div class="checkbox-container">
+            <input type="checkbox" id="termsAccepted" formControlName="termsAccepted" aria-required="true">
+            <label for="termsAccepted">Ich habe die <span>Datenschutzerklärung</span> gelesen und stimme der Verarbeitung meiner Daten zu.*</label>
+          </div>
+          <div class="error-message" *ngIf="contactForm.get('termsAccepted')?.invalid && contactForm.get('termsAccepted')?.touched">
+            Bitte akzeptieren Sie die Datenschutzerklärung
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="form-note">
+      * Pflichtfelder
+    </div>
+    
+    <div class="button-container">
+      <button type="button" class="back-button" routerLink="/calculator/second">Zurück</button>
+      <button type="submit" class="submit-button" routerLink="/calculator/fourth">Abschicken</button>
+    </div>
+  </form>
+</div>

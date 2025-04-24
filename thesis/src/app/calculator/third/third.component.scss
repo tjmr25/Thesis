@@ -1,0 +1,146 @@
+h2 {
+  text-align: center;
+  color: var(--main-green-dark);
+  margin-bottom: 2rem;
+  font-size: 1.8rem;
+}
+
+.form-container {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.form-intro {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: var(--text-color);
+  font-size: 1.1rem;
+}
+
+.form-section {
+  margin-bottom: 2.5rem;
+  
+  h3 {
+    color: var(--main-green-dark);
+    font-size: 1.3rem;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #eaeaea;
+  }
+}
+
+.form-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-bottom: 1.5rem;
+  
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.form-field {
+  flex: 1 1 calc(50% - 1rem);
+  max-width: calc(50% - 1rem);
+  
+  &.form-field-small {
+    flex: 0 0 100px;
+    min-width: 100px;
+    max-width: 100px;
+  }
+  
+  &.full-width {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    color: var(--text-color);
+  }
+  
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"],
+  select,
+  textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ccc;
+    background-color: white;
+    color: var(--text-color);
+    font-size: 1rem;
+    font-family: inherit;
+    transition: border-color 0.3s;
+    box-sizing: border-box;
+    
+    &:focus {
+      outline: none;
+      border-color: var(--main-green);
+    }
+  }
+  
+  textarea {
+    resize: vertical;
+  }
+}
+
+.checkbox-field {
+  margin-top: 0.5rem;
+}
+
+.checkbox-container {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  
+  input[type="checkbox"] {
+    margin-top: 0.25rem;
+    width: 18px;
+    height: 18px;
+  }
+  
+  label {
+    font-weight: normal;
+    
+    span {
+      color: var(--main-green-dark);
+      text-decoration: underline;
+      
+      &:hover {
+        color: var(--main-green);
+        
+      }
+    }
+  }
+}
+
+.error-message {
+  color: #d32f2f;
+  font-size: 0.85rem;
+  margin-top: 0.4rem;
+  min-height: 1rem;
+}
+
+.form-note {
+  font-size: 0.9rem;
+  color: #777;
+  margin: 1.5rem 0;
+}
+
+.submit-button {
+  background-color: var(--main-green-dark);
+  color: white;
+  border: none;
+  
+  &:hover {
+    background-color: var(--main-green);
+  }
+}
+
+
+

@@ -1,0 +1,41 @@
+<h2>Ihr persönlicher Tarif</h2>
+
+<div class="offer-container">
+  <div class="offer-info">
+    <p class="offer-intro">Basierend auf Ihren Angaben können wir Ihnen folgenden Tarif anbieten:</p>
+    
+    <div class="offer-amount-box">
+      <div class="offer-label">Monatlicher Beitrag:</div>
+      <div class="offer-amount">{{ offerAmount | number:'1.2-2' }} €</div>
+      <div class="offer-note">inkl. aller Leistungen und Versicherungsschutz</div>
+    </div>
+    
+    <div class="offer-calculation">
+      <h3>Beitragsberechnung:</h3>
+      <table class="calculation-table">
+        <tr>
+          <td>Grundbeitrag:</td>
+          <td class="amount-cell">{{ baseCost | number:'1.2-2' }} €</td>
+        </tr>
+        <tr>
+          <td>Zuschlag Rasse:</td>
+          <td class="amount-cell">{{ raceCost | number:'1.2-2' }} €</td>
+        </tr>
+        <tr>
+          <td>Zuschlag Alter:</td>
+          <td class="amount-cell">{{ ageCost | number:'1.2-2' }} €</td>
+        </tr>
+        <tr class="total-row">
+          <td>Gesamtbeitrag:</td>
+          <td class="amount-cell">{{ offerAmount | number:'1.2-2' }} €</td>
+        </tr>
+      </table>
+    </div>
+    
+  </div>
+</div>
+
+<div class="button-container">
+  <button class="back-button" routerLink="/calculator/first">Zurück</button>
+  <button class="next-button" routerLink="/calculator/third">Zur Kontaktanfrage</button>
+</div>

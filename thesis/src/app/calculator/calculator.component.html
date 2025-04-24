@@ -1,0 +1,31 @@
+<div class="calculator-container">
+  <!-- Breadcrumb navigation -->
+  <div class="container">
+      <div class="breadcrumb">
+        <div class="step" [class.active]="isRouteActive('first')">
+          <div class="step-circle">1</div>
+          <div class="step-label">Pferdedaten</div>
+        </div>
+        <div class="step-line"></div>
+        <div class="step" [class.active]="isRouteActive('second')">
+          <div class="step-circle">2</div>
+          <div class="step-label">Unser Angebot</div>
+        </div>
+        <div class="step-line"></div>
+        <div class="step" [class.active]="isRouteActive('third')">
+          <div class="step-circle">3</div>
+          <div class="step-label">Kontaktdaten</div>
+        </div>
+        <div class="step-line"></div>
+        <div class="step" [class.active]="isRouteActive('fourth')">
+          <div class="step-circle">4</div>
+          <div class="step-label">Bestätigung</div>
+        </div>
+    </div>
+  
+    <!-- Main calculator content -->
+    <div class="calculator-box">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>

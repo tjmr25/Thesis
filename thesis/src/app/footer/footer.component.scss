@@ -1,11 +1,10 @@
 footer {
-  background-color: #a4c401;
+  background-color: var(--main-green-dark);
   color: #fff;
   display: flex;
   justify-content: center;
+  align-items: center;
   text-align: center;
-}
-
-.footer-container {
-  width: 60%;
+  min-height: 4rem;
+  height: 4rem;
 }

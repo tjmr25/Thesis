@@ -1,31 +1,103 @@
 <main>
-        <div class="horse-image-container">
-            <div class="horse-image-content">
-                <div class="insurence-info">
-                    
-                    <h2>Pferdeversicherung der LVM</h2>   
-                    <p>
-                        Die Pferdeversicherung der LVM ist eine Versicherung für Pferde. 
-                        Sie deckt verschiedene Risiken ab, die bei Pferden auftreten können.
-                        Außerdem bietet die LVM auch Versicherungen für Pferdehalter an.
-                    </p>
-                    
+    <div class="horse-section">
+        <div class="container">
+            <div class="horse-image-container">
+                <div class="horse-image-content">
+                    <div class="insurence-info">
+                        
+                        <h2>Ihr Pferd in besten Händen</h2>   
+                        <p>
+                            Schützen Sie Ihren treuen Begleiter mit der maßgeschneiderten Pferdeversicherung der LVM.
+                            Wir sichern Ihr Pferd umfassend ab und bieten zusätzlich Schutz für Sie als Pferdehalter.
+                        </p>
+                        <button matButton routerLink="/calculator">
+                            <span>Zum Tarifrechner</span>
+                        </button>
+                        
+                    </div>
                 </div>
             </div>
         </div>
-
-        <div class="content-container">
-            <h1>Lorem Ipsum</h1>
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam auctor, nisl id aliquam tincidunt, 
-                nisl nisl aliquam nisl, nec aliquam nisl nisl id nisl. Nullam auctor, nisl id aliquam tincidunt. 
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam auctor, nisl id aliquam tincidunt, 
-                nisl nisl aliquam nisl, nec aliquam nisl nisl id nisl. Nullam auctor, nisl id aliquam tincidunt.
-            </p>
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam auctor, nisl id aliquam tincidunt, 
-                nisl nisl aliquam nisl, nec aliquam nisl nisl id nisl. Nullam auctor, nisl id aliquam tincidunt. 
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-            </p>
+    </div>
+    <div class="mid-section">
+        <div class="container">
+            <div class="content-section">
+                <div id="p1">
+                    <div class="p-main-container">
+                        <div class="p-main">
+                            <h2>Rundum-Schutz für Ihr Pferd</h2>
+                            <p>
+                                Ob Freizeitpartner oder Sportkamerad – Ihr Pferd verdient den besten Schutz. Unsere flexible 
+                                Pferdeversicherung passt sich Ihren individuellen Bedürfnissen an und deckt Tierarztkosten, 
+                                Operationen und Rehabilitationsmaßnahmen nach Unfällen oder Krankheiten ab. Profitieren Sie 
+                                von schneller Schadensabwicklung und sofortiger Unterstützung im Ernstfall. Inklusive 
+                                Haftpflichtschutz für Schäden, die durch Ihr Pferd verursacht werden – damit Sie sich 
+                                keine Sorgen machen müssen.
+                            </p>
+                        </div>
+                        <div>
+                            <img id="pferdicon" class="icon" src="horse-icon.svg" alt="Pferd Icon">
+                        </div>
+                    </div>
+                </div>
+            
+                <div id="p2">
+                    <div class="p-main-container">
+                        <div>
+                            <img id="schlossicon" class="icon" src="lock-icon.svg" alt="Sicherheit Icon">
+                        </div>
+                        <div class="p-main">
+                            <h2>Premium-Leistungen für mehr Sicherheit</h2>
+                            <p>
+                                Erweitern Sie den Basisschutz mit unseren attraktiven Zusatzoptionen: Diebstahlschutz, 
+                                Transportversicherung für Turnierreisen und Lebensversicherung für Ihr Pferd. 
+                                Besonders wertvoll: Wir übernehmen auch Kosten für alternative Heilmethoden wie 
+                                Physiotherapie und Osteopathie, damit Ihr Pferd langfristig gesund bleibt. 
+                                Mit der LVM-Pferdeversicherung entscheiden Sie sich für Qualität und Zuverlässigkeit – 
+                                für ein entspanntes Miteinander in jeder Situation.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
+    </div>
+    <div class="testimonials-section">
+        <div class="container">
+            <div class="testimonials">
+                <h2>Das sagen unsere Kunden</h2>
+                <div class="carousel-container">
+                    <button mat-icon-button (click)="previous()" class="nav-button">
+                        <mat-icon>chevron_left</mat-icon>
+                    </button>
+                    
+                    <div class="carousel">
+                        <div class="testimonial-card" *ngFor="let testimonial of getVisibleTestimonials(); let i = index" 
+                             [class.active]="i === 1">
+                            <div class="testimonial-content">
+                                <div class="quote-icon">
+                                    <span>❝</span>
+                                </div>
+                                <p class="testimonial-text">{{testimonial.text}}</p>
+                                <div class="rating">
+                                    <span *ngFor="let star of [].constructor(testimonial.rating)">★</span>
+                                </div>
+                            </div>
+                            <div class="testimonial-footer">
+                                <div class="avatar">
+                                    <span>{{testimonial.name.charAt(0)}}</span>
+                                </div>
+                                <p class="testimonial-author">{{testimonial.name}}</p>
+                            </div>
+                        </div>
+                    </div>
+        
+                    <button mat-icon-button (click)="next()" class="nav-button">
+                        <mat-icon>chevron_right</mat-icon>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
 </main>
+

@@ -1,22 +1,29 @@
 header {
-  background-color: #a4c401;
-  color: #fff;
+  background-color: var(--white);
+  color: var(--main-green-dark);
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 4rem;
+  border-bottom: 1px solid var(--main-green-dark);
 }
 
 header > div {
-  width: 60%;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
 .logo {
-  font-size: 2rem;
-  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 4rem;
+  
+  img {
+    height: 2.5rem;
+    width: auto;
+  }
 }
 
 nav ul {
@@ -27,6 +34,44 @@ nav ul {
 }
 
 nav li {
-  margin-left: 1.5rem;
+  margin-left: 2.5rem;
   cursor: pointer;
+  position: relative;
+  padding: 0.5rem 0;
+  color: var(--main-green-dark);
+  font-weight: 500;
+  
+  &:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: var(--main-green-dark);
+    transform: scaleX(0);
+    transform-origin: bottom;
+    transition: transform 0.3s ease;
+  }
+  
+  &:not(:last-child):hover::after {
+    transform: scaleX(1);
+  }
+
+  &:not(:last-child):active {
+    transform: scale(0.95);
+  }
+
+  &:last-child {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    border: 1px solid var(--main-green-dark);
+    cursor: default;
+    
+    .material-icons {
+      font-size: 1.2rem;
+    }
+  }
 }
